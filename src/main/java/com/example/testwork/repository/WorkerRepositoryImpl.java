@@ -1,6 +1,7 @@
 package com.example.testwork.repository;
 
 import com.example.testwork.entity.WorkerEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -15,6 +16,7 @@ public class WorkerRepositoryImpl implements WorkerRepository {
 
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
     public WorkerRepositoryImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }

@@ -2,6 +2,7 @@ package com.example.testwork.controller;
 
 import com.example.testwork.entity.WorkerEntity;
 import com.example.testwork.service.WorkerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ public class WorkerController {
 
     private WorkerService workerService;
 
+    @Autowired
     public WorkerController(WorkerService workerService) {
         this.workerService = workerService;
     }

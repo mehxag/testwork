@@ -2,6 +2,7 @@ package com.example.testwork.service;
 
 import com.example.testwork.entity.WorkerEntity;
 import com.example.testwork.repository.WorkerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +14,7 @@ public class WorkerServiceImpl implements WorkerService {
 
     private final WorkerRepository workerRepository;
 
+    @Autowired
     public WorkerServiceImpl(WorkerRepository workerRepository) {
         this.workerRepository = workerRepository;
     }

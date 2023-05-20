@@ -3,6 +3,7 @@ package com.example.testwork.repository;
 
 import com.example.testwork.dto.TaskDTO;
 import com.example.testwork.entity.TaskEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -16,6 +17,7 @@ public class TaskRepositoryImpl implements TaskRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
+    @Autowired
     public TaskRepositoryImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }

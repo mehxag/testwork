@@ -5,6 +5,7 @@ import com.example.testwork.dto.TaskDTO;
 import com.example.testwork.entity.TaskEntity;
 import com.example.testwork.exception.TaskException;
 import com.example.testwork.repository.TaskRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,6 +28,7 @@ public class TaskServiceImpl implements TaskService {
 
     private ExecutorService executor = Executors.newFixedThreadPool(FIXED_THREAD_POOL);
 
+    @Autowired
     public TaskServiceImpl(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
     }
