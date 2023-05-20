@@ -13,7 +13,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import static com.example.testwork.exception.TaskException.TaskExceptionType.*;
+import static com.example.testwork.exception.TaskException.TaskExceptionType.TASK_FAILED_DATA;
+import static com.example.testwork.exception.TaskException.TaskExceptionType.TASK_FAILED_GET_BY_ID;
 
 @Service
 public class TaskServiceImpl implements TaskService {
