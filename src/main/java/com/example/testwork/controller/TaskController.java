@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/task")
+@RequestMapping("/tasks")
 public class TaskController {
 
     private final TaskService taskService;
@@ -30,7 +30,7 @@ public class TaskController {
         taskService.createTask();
     }
 
-    @GetMapping("/short/task")
+    @GetMapping("/short/tasks")
     public List<TaskDTO> getShortTask() throws TaskException {
         return taskService.getShortTask();
     }
@@ -41,7 +41,7 @@ public class TaskController {
     }
 
     @PutMapping("/{id}")
-    public void updateTaskById(@PathVariable int id, @RequestBody TaskEntity taskEntity) throws TaskException {
+    public void updateTaskById(@PathVariable int id, @RequestBody TaskEntity taskEntity) {
         taskService.updateTaskById(id, taskEntity);
     }
 

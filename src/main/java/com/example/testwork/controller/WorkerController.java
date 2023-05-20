@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/workers")
 public class WorkerController {
 
     private WorkerService workerService;
@@ -16,28 +17,28 @@ public class WorkerController {
         this.workerService = workerService;
     }
 
-    @PostMapping("/workers/creator")
+    @PostMapping("/creator")
     public ResponseEntity<WorkerEntity> createWorker(@RequestBody WorkerEntity workerEntity) {
         workerService.createWorker(workerEntity);
         return ResponseEntity.ok(workerEntity);
     }
 
-    @GetMapping("/workers/all")
+    @GetMapping("/all")
     public List<WorkerEntity> getAllWorker() {
         return workerService.getAllWorker();
     }
 
-    @GetMapping("/workers/{id}")
+    @GetMapping("/{id}")
     public List<WorkerEntity> getWorkerById(@PathVariable int id) {
         return workerService.getWorkerById(id);
     }
 
-    @PutMapping("/workers/update/{id}")
+    @PutMapping("/update/{id}")
     public void updateWorkerById(@PathVariable int id, @RequestBody WorkerEntity workerEntity) {
         workerService.updateWorkerById(id, workerEntity);
     }
 
-    @DeleteMapping("/workers/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteWorkerById(@PathVariable int id) {
         workerService.deleteWorkerById(id);
     }

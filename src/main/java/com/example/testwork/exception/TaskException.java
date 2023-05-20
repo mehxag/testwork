@@ -7,9 +7,8 @@ public class TaskException extends Exception {
     }
 
     public enum TaskExceptionType {
-        TASK_MISSING_QUEUE(-1, "В очереди не хватает потоков."),
-        TASK_FAILED_DATA(-2, "Таблица Tasks пустая."),
-        TASK_FAILED_GET_BY_ID(-3, "Поле не найдено по id"),
+        TASK_FAILED_DATA(-1, "Таблица Tasks пустая."),
+        TASK_FAILED_GET_BY_ID(-2, "Поле не найдено по id"),
         ;
         private final int code;
 
